@@ -399,20 +399,20 @@ namespace MicrosoftDXGermany.hybrisOnAzure.Plugins
 
             // 4. TanukiWrapper
             #region Tanuki wrapper
-            //Trace.TraceInformation("HybrisPlugin: Installing StopTanukiWrapper.jar");
-            //try
-            //{
-            //    // Save the required StopTanukiWrapper.jar file in the platform directory
-            //    string stopTanukiWrapperFileName = Path.Combine(hybrisWorkingDirectory, "StopTanukiWrapper.jar");
-            //    File.WriteAllBytes(stopTanukiWrapperFileName, hybrisOnAzure.Common.Properties.Resources.StopTanukiWrapper);
-            //}
-            //catch(Exception ex)
-            //{
-            //    Trace.TraceAndLogError("HybrisPlugin", "Error installing StopTanukiWrapper.jar: " + ex.ToString());
-            //    this.Status = AzurePluginStatus.ErrorInitializing;
-            //    this.StatusMessage = "Error installing StopTanukiWrapper.jar";
-            //    return false;
-            //}
+            Trace.TraceInformation("HybrisPlugin: Installing StopTanukiWrapper.jar");
+            try
+            {
+                // Save the required StopTanukiWrapper.jar file in the platform directory
+                string stopTanukiWrapperFileName = Path.Combine(hybrisWorkingDirectory, "StopTanukiWrapper.jar");
+                File.WriteAllBytes(stopTanukiWrapperFileName, hybrisOnAzure.Common.Properties.Resources.StopTanukiWrapper);
+            }
+            catch (Exception ex)
+            {
+                Trace.TraceAndLogError("HybrisPlugin", "Error installing StopTanukiWrapper.jar: " + ex.ToString());
+                this.Status = AzurePluginStatus.ErrorInitializing;
+                this.StatusMessage = "Error installing StopTanukiWrapper.jar";
+                return false;
+            }
             #endregion
 
             // 5. actually build the hybris platform
