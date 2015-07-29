@@ -7,6 +7,6 @@ nuget packages included in this build are subject to their individual licenses. 
 
 [Microsoft Deployment Accelerator for Hybris on Azure (1.0.0, 23/06/2015)](https://msdeployacchybrisonazure.blob.core.windows.net/microsoft-deployment-accelerator-for-hybris-on-azure/Microsoft%20Deployment%20Accelerator%20for%20hybris%20on%20Azure%201.0.0%20230615.zip)
 
-In order to deploy this sample build as a cloud service on Azure, changes are required in the ServiceConfiguration.Raw.cscfg file. See accelerator documentation for details.
+In order to deploy this sample build as a cloud service on Azure, changes are required in the ServiceConfiguration.Raw.cscfg file. See [Hybris On Azure.pdf](Hybris%20On%20Azure.pdf) for instructions how to use this package to deploy hybris on Azure.
 
 
