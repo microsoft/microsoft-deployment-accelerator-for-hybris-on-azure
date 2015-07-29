@@ -5,5 +5,5 @@ See [RELEASE.md](RELEASE.md) for pre-build cloud service packages.
 
 See [LICENSE](LICENSE) for license information.
 
-See [Hybris%20On%20Azure.pdf](Hybris%20On%20Azure.pdf) for instructions how to use this package to deploy hybris on Azure.
+See [Hybris On Azure.pdf](Hybris%20On%20Azure.pdf) for instructions how to use this package to deploy hybris on Azure.
 
