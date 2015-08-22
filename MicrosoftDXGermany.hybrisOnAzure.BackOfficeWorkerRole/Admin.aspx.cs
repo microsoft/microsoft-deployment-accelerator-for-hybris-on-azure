@@ -32,21 +32,21 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
                 // display the current status of 
                 DisplayArrStatus(additionalConfig);
                 // if there are instances of the frontend worker > display their status
-                if (RoleEnvironment.Roles.ContainsKey("tangible.HybrisOnAzure.FrontendWorkerRole"))
+                if (RoleEnvironment.Roles.ContainsKey("MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole"))
                 {
-                    DisplayRoleStatus("tangible.HybrisOnAzure.FrontendWorkerRole", "FrontendWorkerServer", tblFrontend, additionalConfig);
+                    DisplayRoleStatus("MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole", "FrontendWorkerServer", tblFrontend, additionalConfig);
                     if (!Page.IsPostBack)
-                        txtFrontendInstanceCount.Text = RoleEnvironment.Roles["tangible.HybrisOnAzure.FrontendWorkerRole"].Instances.Count.ToString();
+                        txtFrontendInstanceCount.Text = RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole"].Instances.Count.ToString();
                 }
 
                 // if there are instances of the backend workder > display their status
-                if (RoleEnvironment.Roles.ContainsKey("tangible.HybrisOnAzure.BackOfficeWorkerRole"))
-                    DisplayRoleStatus("tangible.HybrisOnAzure.BackOfficeWorkerRole", "BackOfficeWorkerServer", tblBackOffice, additionalConfig);
+                if (RoleEnvironment.Roles.ContainsKey("MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole"))
+                    DisplayRoleStatus("MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole", "BackOfficeWorkerServer", tblBackOffice, additionalConfig);
 
                 // display currently used hybris and java packages
                 if (!Page.IsPostBack)
                 {
-                    var defaultConfig = additionalConfig.Roles.First(r => r.Name == "tangible.HybrisOnAzure.BackOfficeWorkerRole").Instances.First(i => i.Id == "default");
+                    var defaultConfig = additionalConfig.Roles.First(r => r.Name == "MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole").Instances.First(i => i.Id == "default");
                     txtJavaPackage.Text = defaultConfig.Configurations.Any(c => c.Name == "JavaPackage") ? defaultConfig.Configurations.First(c => c.Name == "JavaPackage").Value : string.Empty;
                     txtHybrisPackage.Text = defaultConfig.Configurations.Any(c => c.Name == "HybrisPackage") ? defaultConfig.Configurations.First(c => c.Name == "HybrisPackage").Value : string.Empty;
                 }
@@ -62,7 +62,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
 
         private void DisplayArrStatus(AdditionalConfiguration additionalConfig)
         {
-            var role = RoleEnvironment.Roles["tangible.HybrisOnAzure.ArrRole"];
+            var role = RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.ArrRole"];
 
             TableRow currentRow = null;
             for(int i = 0; i < role.Instances.Count; i++)
@@ -343,15 +343,15 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
             var xConfig = XElement.Parse(clearConfig);
             int arrInstanceCount;
             if (!int.TryParse(txtArrInstanceCount.Text, out arrInstanceCount))
-                arrInstanceCount = RoleEnvironment.Roles["tangible.HybrisOnAzure.ArrRole"].Instances.Count;
-            SetInstanceCount(xConfig, "tangible.HybrisOnAzure.ArrRole", arrInstanceCount);
+                arrInstanceCount = RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.ArrRole"].Instances.Count;
+            SetInstanceCount(xConfig, "MicrosoftDXGermany.hybrisOnAzure.ArrRole", arrInstanceCount);
 
-            if (RoleEnvironment.Roles.ContainsKey("tangible.HybrisOnAzure.FrontendWorkerRole"))
+            if (RoleEnvironment.Roles.ContainsKey("MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole"))
             {
                 int frontendInstanceCount;
                 if (!int.TryParse(txtFrontendInstanceCount.Text, out frontendInstanceCount))
-                    frontendInstanceCount = RoleEnvironment.Roles["tangible.HybrisOnAzure.FrontendWorkerRole"].Instances.Count;
-                SetInstanceCount(xConfig, "tangible.HybrisOnAzure.FrontendWorkerRole", frontendInstanceCount);
+                    frontendInstanceCount = RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole"].Instances.Count;
+                SetInstanceCount(xConfig, "MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole", frontendInstanceCount);
             }
 
             SetAdditionalConfigFile(xConfig, containerAndFilePath);
@@ -367,7 +367,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
                 storageAccount = CloudStorageAccount.Parse(RoleEnvironment.GetConfigurationSettingValue("StorageConnectionString"));
             var blobClient = storageAccount.CreateCloudBlobClient();
 
-            var oldDefaultBackOfficeConfig = oldAddConfig.Roles.First(r => r.Name == "tangible.HybrisOnAzure.BackOfficeWorkerRole").Instances.First(i => i.Id == "default");
+            var oldDefaultBackOfficeConfig = oldAddConfig.Roles.First(r => r.Name == "MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole").Instances.First(i => i.Id == "default");
             var currentJavaPackage = oldDefaultBackOfficeConfig.Configurations.Any(c => c.Name == "JavaPackage") ? oldDefaultBackOfficeConfig.Configurations.First(c => c.Name == "JavaPackage").Value : string.Empty;
             var currentHybrisPackage = oldDefaultBackOfficeConfig.Configurations.Any(c => c.Name == "HybrisPackage") ? oldDefaultBackOfficeConfig.Configurations.First(c => c.Name == "HybrisPackage").Value : string.Empty;
 
@@ -389,7 +389,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
                 blobClient.CopyDirectory("deployment/HybrisPackages/" + newHybrisPackage, "deployment");
             
             // store new package information
-            foreach(var role in newAddConfig.Roles.Where(r => r.Name == "tangible.HybrisOnAzure.BackOfficeWorkerRole" || r.Name == "tangible.HybrisOnAzure.FrontendWorkerRole"))
+            foreach (var role in newAddConfig.Roles.Where(r => r.Name == "MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole" || r.Name == "MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole"))
                 foreach(var instance in role.Instances)
                 {
                     // remove old package information
@@ -408,7 +408,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
             int desiredArrInstanceCount;
             if (!int.TryParse(txtArrInstanceCount.Text, out desiredArrInstanceCount))
                 throw new Exception("Cannot parse ARR instance count");
-            var arrRole = new tangible.Azure.AdditionalConfiguration.Role() { Name = "tangible.HybrisOnAzure.ArrRole", DesiredInstanceCount = desiredArrInstanceCount };
+            var arrRole = new tangible.Azure.AdditionalConfiguration.Role() { Name = "MicrosoftDXGermany.hybrisOnAzure.ArrRole", DesiredInstanceCount = desiredArrInstanceCount };
             newConfiguration.Roles.Add(arrRole);
 
             // default configuration
@@ -418,7 +418,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
            
             // instance configuration
             if (RoleEnvironment.IsAvailable)
-                foreach (var arrInstance in RoleEnvironment.Roles["tangible.HybrisOnAzure.ArrRole"].Instances)
+                foreach (var arrInstance in RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.ArrRole"].Instances)
                 {
                     var arrInstanceConfig = new tangible.Azure.AdditionalConfiguration.Instance() { Id = arrInstance.Id };
                     arrRole.Instances.Add(arrInstanceConfig);
@@ -431,7 +431,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
             int desiredFrontendInstanceCount;
             if (!int.TryParse(txtArrInstanceCount.Text, out desiredFrontendInstanceCount))
                 throw new Exception("Cannot parse FrontendWorker instance count");
-            var frontendRole = new tangible.Azure.AdditionalConfiguration.Role() { Name = "tangible.HybrisOnAzure.FrontendWorkerRole", DesiredInstanceCount = desiredFrontendInstanceCount };
+            var frontendRole = new tangible.Azure.AdditionalConfiguration.Role() { Name = "MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole", DesiredInstanceCount = desiredFrontendInstanceCount };
             newConfiguration.Roles.Add(frontendRole);
 
             // defaultConfiguration
@@ -441,8 +441,8 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
             frontendDefaultConfig.Configurations.Add(new tangible.Azure.AdditionalConfiguration.ConfigurationItem() { Name = "Reboot", Value = String.Empty });
 
             // instance configuration
-            if (RoleEnvironment.IsAvailable && RoleEnvironment.Roles.ContainsKey("tangible.HybrisOnAzure.FrontendWorkerRole"))
-                foreach (var frontendInstance in RoleEnvironment.Roles["tangible.HybrisOnAzure.FrontendWorkerRole"].Instances)
+            if (RoleEnvironment.IsAvailable && RoleEnvironment.Roles.ContainsKey("MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole"))
+                foreach (var frontendInstance in RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole"].Instances)
                 {
                     var frontendInstanceConfig = new tangible.Azure.AdditionalConfiguration.Instance() { Id = frontendInstance.Id };
                     frontendRole.Instances.Add(frontendInstanceConfig);
@@ -455,7 +455,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
                 }
 
             // BackOffice Worker Instances
-            var backOfficeRole = new tangible.Azure.AdditionalConfiguration.Role() { Name = "tangible.HybrisOnAzure.BackOfficeWorkerRole" };
+            var backOfficeRole = new tangible.Azure.AdditionalConfiguration.Role() { Name = "MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole" };
             newConfiguration.Roles.Add(backOfficeRole);
 
             // defaultConfiguration
@@ -465,8 +465,8 @@ namespace MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole
             backOfficeDefaultConfig.Configurations.Add(new tangible.Azure.AdditionalConfiguration.ConfigurationItem() { Name = "Reboot", Value = String.Empty });
 
             // instance configuration
-            if (RoleEnvironment.IsAvailable && RoleEnvironment.Roles.ContainsKey("tangible.HybrisOnAzure.BackOfficeWorkerRole"))
-                foreach (var backOfficeInstance in RoleEnvironment.Roles["tangible.HybrisOnAzure.BackOfficeWorkerRole"].Instances)
+            if (RoleEnvironment.IsAvailable && RoleEnvironment.Roles.ContainsKey("MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole"))
+                foreach (var backOfficeInstance in RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole"].Instances)
                 {
                     var backOfficeInstanceConfig = new tangible.Azure.AdditionalConfiguration.Instance() { Id = backOfficeInstance.Id };
                     backOfficeRole.Instances.Add(backOfficeInstanceConfig);

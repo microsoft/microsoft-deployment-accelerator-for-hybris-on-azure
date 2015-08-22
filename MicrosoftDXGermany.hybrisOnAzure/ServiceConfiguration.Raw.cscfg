@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ServiceConfiguration serviceName="MicrosoftDXGermany.HybrisOnAzure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
+<ServiceConfiguration serviceName="MicrosoftDXGermany.hybrisOnAzure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2014-06.2.4">
   <Role name="MicrosoftDXGermany.hybrisOnAzure.ArrRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km345cWrdfFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km345cWrdfFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km6345cWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km6345cWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
       <Setting name="tangible.Azure.Trace.EnableServiceBusTracing" value="True" />
       <Setting name="tangible.Azure.Trace.ServicePath" value="trace" />
       <Setting name="tangible.Azure.Trace.ServiceNamespace" value="tangiblehybristest" />
       <Setting name="tangible.Azure.Trace.Credentials.IssuerName" value="owner" />
-      <Setting name="tangible.Azure.Trace.Credentials.IssuerSecret" value="dd6XpFJSdf6hQ8dbcb4dOrYSNjUh3ryszInvbtaSdm4TU=" />
+      <Setting name="tangible.Azure.Trace.Credentials.IssuerSecret" value="dd66XpFJS6hQ8dbcb4dOrYSNjUh3ryszInvbtaSdm4TU=" />
       <!-- Per default those trace level exist: 0 (Error), 10 (Warning), 20 (Information), 30 (Verbose) -->
       <Setting name="tangible.Azure.Trace.MaxTraceLevel" value="100" />
       <Setting name="tangible.Azure.Startup.Download.Downloads" value="deployment/ARR30.zip|C:\Setups\ApplicationRequestRouting|true;deployment/customMaintenance.zip|E:\sitesroot\0|true" />
@@ -18,7 +18,7 @@
       <Setting name="tangible.Azure.Startup.PatchFiles.Files" value="" />
       <Setting name="tangible.Azure.ARR.IPRangeEnabled" value="True" />
       <Setting name="tangible.Azure.ARR.IPRange" value="10.11.5.4-10.11.5.254" />
-      <Setting name="tangible.Azure.ARR.WebFarmRoleName" value="MicrosoftDXGermany.HybrisOnAzure.FrontendWorkerRole" />
+      <Setting name="tangible.Azure.ARR.WebFarmRoleName" value="MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole" />
       <Setting name="tangible.Azure.ARR.WebFarmEndpointName" value="TomcatHttp" />
       <Setting name="tangible.Azure.ARR.WebFarmName" value="AzureWebFarm" />
       <Setting name="tangible.Azure.ARR.HealthCheckUrl" value="http://localhost:9001/login.jsp" />
@@ -35,12 +35,12 @@
   <Role name="MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km345cWrdfFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km6345cWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
       <Setting name="tangible.Azure.Trace.EnableServiceBusTracing" value="True" />
       <Setting name="tangible.Azure.Trace.ServicePath" value="trace" />
       <Setting name="tangible.Azure.Trace.ServiceNamespace" value="tangiblehybristest" />
       <Setting name="tangible.Azure.Trace.Credentials.IssuerName" value="owner" />
-      <Setting name="tangible.Azure.Trace.Credentials.IssuerSecret" value="dd6XpFJSdf6hQ8dbcb4dOrYSNjUh3ryszInvbtaSdm4TU=" />
+      <Setting name="tangible.Azure.Trace.Credentials.IssuerSecret" value="dd66XpFJS6hQ8dbcb4dOrYSNjUh3ryszInvbtaSdm4TU=" />
       <!-- Per default those trace level exist: 0 (Error), 10 (Warning), 20 (Information), 30 (Verbose) -->
       <Setting name="tangible.Azure.Trace.MaxTraceLevel" value="100" />
       <Setting name="tangible.Azure.Startup.Download.Downloads" value="deployment/java.zip|%ProgramFiles%\Java|true;deployment/JDBCSetup.cmd|C:\Setups|false;deployment/hybrisServer-AllExtensions.zip|C:\Applications|true;deployment/hybrisServer-Platform.zip|C:\Applications|true;deployment/hybrisServer-Config.zip|C:\Applications|true;/deployment/solr.zip|C:\Applications\solr|true;/deployment/solrconfig.xml|C:\Applications\solr\conf|false;deployment/solrserver.bat|C:\Applications\solr|false;deployment/RunJar.zip|C:\Applications\RunJar|true;" />
@@ -55,7 +55,7 @@
       <Setting name="HybrisOnAzure.StartSolrPlugin" value="true" />
       <Setting name="HybrisOnAzure.IndexMaster" value="false"/>
       <Setting name="HybrisOnAzure.IndexSlave" value="true" />
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km345cWrdfFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km6345cWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
     </ConfigurationSettings>
     <Certificates>
     </Certificates>
@@ -63,12 +63,12 @@
   <Role name="MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole">
     <Instances count="1" />
     <ConfigurationSettings>
-      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km345cWrdfFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
+      <Setting name="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km6345cWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
       <Setting name="tangible.Azure.Trace.EnableServiceBusTracing" value="True" />
       <Setting name="tangible.Azure.Trace.ServicePath" value="trace" />
       <Setting name="tangible.Azure.Trace.ServiceNamespace" value="tangiblehybristest" />
       <Setting name="tangible.Azure.Trace.Credentials.IssuerName" value="owner" />
-      <Setting name="tangible.Azure.Trace.Credentials.IssuerSecret" value="dd6XpFJSdf6hQ8dbcb4dOrYSNjUh3ryszInvbtaSdm4TU=" />
+      <Setting name="tangible.Azure.Trace.Credentials.IssuerSecret" value="dd66XpFJS6hQ8dbcb4dOrYSNjUh3ryszInvbtaSdm4TU=" />
       <!-- Per default those trace level exist: 0 (Error), 10 (Warning), 20 (Information), 30 (Verbose) -->
       <Setting name="tangible.Azure.Trace.MaxTraceLevel" value="100" />
       <Setting name="tangible.Azure.Startup.Download.Downloads" value="deployment/ARR30.zip|C:\Setups\ApplicationRequestRouting|true;deployment/java.zip|%ProgramFiles%\Java|true;deployment/JDBCSetup.cmd|C:\Setups|false;deployment/hybrisServer-AllExtensions.zip|C:\Applications|true;deployment/hybrisServer-Platform.zip|C:\Applications|true;deployment/hybrisServer-Config.zip|C:\Applications|true;;/deployment/solr.zip|C:\Applications\solr|true;/deployment/solrconfig.xml|C:\Applications\solr\conf|false;deployment/solrserver.bat|C:\Applications\solr|false;deployment/RunJar.zip|C:\Applications\RunJar|true;deployment/ConnectAzureFiles.cmd|C:\Setups|false" />
@@ -86,14 +86,14 @@
       <Setting name="HybrisOnAzure.JavaProcessShutdownWaitMinutes" value="2" />
       <Setting name="HybrisOnAzure.BackOfficeShare.DesiredDrive" value="s:" />
       <Setting name="HybrisOnAzure.BackOfficeShare.AccountName" value="hybristest" />
-      <Setting name="HybrisOnAzure.BackOfficeShare.AccountKey" value="km345dfcWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
+      <Setting name="HybrisOnAzure.BackOfficeShare.AccountKey" value="km6345cWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
       <Setting name="HybrisOnAzure.BackOfficeShare.ShareName" value="sharetest" />
       <Setting name="HybrisOnAzure.StartSolrPlugin" value="true" />
       <Setting name="HybrisOnAzure.IndexMaster" value="true" />
       <Setting name="HybrisOnAzure.IndexSlave" value="false" />
       <Setting name="tangible.Azure.ARR.IPRangeEnabled" value="True" />
       <Setting name="tangible.Azure.ARR.IPRange" value="10.11.5.4-10.11.5.254" />
-      <Setting name="tangible.Azure.ARR.WebFarmRoleName" value="tangible.HybrisOnAzure.BackOfficeWorkerRole" />
+      <Setting name="tangible.Azure.ARR.WebFarmRoleName" value="MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole" />
       <Setting name="tangible.Azure.ARR.WebFarmEndpointName" value="TomcatHttp" />
       <Setting name="tangible.Azure.ARR.WebFarmName" value="AzureWebFarm" />
       <Setting name="tangible.Azure.ARR.HealthCheckUrl" value="http://localhost:9001/login.jsp" />
@@ -101,7 +101,7 @@
       <Setting name="tangible.Azure.ARR.HealthCheckFile" value="Z:\healthcheck.htm" />
       <Setting name="tangible.Azure.ARR.HealthCheckInterval" value="00:00:05" />
       <Setting name="tangible.Azure.ARR.HealthCheckTimeout" value="00:01:00" />
-      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km345cWrdfFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=hybristest;AccountKey=km6345cWrFvfQ1gtzc0pXSLLv0bA9jQGoE2WOQmCVp/xlrY5lVsAY/TXgTioMtuXwuqheepJJzhdriL0YxBmQfg==" />
     </ConfigurationSettings>
     <Certificates>
       <Certificate name="ServiceWrapperManagementCertificate" thumbprint="60E7ED6E18CD1EFD60534D33952ECD562B6C2C37" thumbprintAlgorithm="sha1" />
@@ -109,19 +109,19 @@
     </Certificates>
   </Role>
   <NetworkConfiguration>
-    <VirtualNetworkSite name="hybristest" />
+    <VirtualNetworkSite name="tangiblehybristest" />
     <AddressAssignments>
-      <InstanceAddress roleName="MicrosoftDXGermany.HybrisOnAzure.ArrRole">
+      <InstanceAddress roleName="MicrosoftDXGermany.hybrisOnAzure.ArrRole">
         <Subnets>
           <Subnet name="ArrNet" />
         </Subnets>
       </InstanceAddress>
-      <InstanceAddress roleName="MicrosoftDXGermany.HybrisOnAzure.FrontendWorkerRole">
+      <InstanceAddress roleName="MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole">
         <Subnets>
           <Subnet name="FrontendNet" />
         </Subnets>
       </InstanceAddress>
-      <InstanceAddress roleName="MicrosoftDXGermany.HybrisOnAzure.BackOfficeWorkerRole">
+      <InstanceAddress roleName="MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole">
         <Subnets>
           <Subnet name="FrontendNet" />
         </Subnets>
