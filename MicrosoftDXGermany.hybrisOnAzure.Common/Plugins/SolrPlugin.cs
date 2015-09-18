@@ -190,7 +190,7 @@ namespace MicrosoftDXGermany.hybrisOnAzure.Plugins
             try
             {
                 string solrCommandFileContent = File.ReadAllText(Path.Combine(solrServerDirectory, solrCommandFileName));
-                var backOfficeInstance = RoleEnvironment.Roles["tangible.HybrisOnAzure.BackOfficeWorkerRole"].Instances.FirstOrDefault();
+                var backOfficeInstance = RoleEnvironment.Roles["MicrosoftDXGermany.hybrisOnAzure.BackOfficeWorkerRole"].Instances.FirstOrDefault();
                 if (backOfficeInstance == null)
                     throw new NullReferenceException("No BackOfficeWorker instance found.");
                 IPEndPoint masterIPEndpoint = backOfficeInstance.InstanceEndpoints["Solr"].IPEndpoint; // CloudEnvironment.Roles[RoleNames.BackOfficeWorker].Instances.First().InstanceEndpoints[EndpointNames.BackOfficeWorker.Solr].IPEndpoint;

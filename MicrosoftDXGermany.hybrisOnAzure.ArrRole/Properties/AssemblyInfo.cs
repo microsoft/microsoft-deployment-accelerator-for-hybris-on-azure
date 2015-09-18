@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("tangible.HybrisOnAzure.ArrRole")]
+[assembly: AssemblyTitle("MicrosoftDXGermany.hybrisOnAzure.ArrRole")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("tangible.HybrisOnAzure.ArrRole")]
+[assembly: AssemblyProduct("MicrosoftDXGermany.hybrisOnAzure.ArrRole")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

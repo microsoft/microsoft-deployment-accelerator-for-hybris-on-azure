@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("tangible.HybrisOnAzure.FrontendWorkerRole")]
+[assembly: AssemblyTitle("MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("tangible.HybrisOnAzure.FrontendWorkerRole")]
+[assembly: AssemblyProduct("MicrosoftDXGermany.hybrisOnAzure.FrontendWorkerRole")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2014")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

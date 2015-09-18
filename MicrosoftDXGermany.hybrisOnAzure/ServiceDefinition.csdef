@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ServiceDefinition name="MicrosoftDXGermany.HybrisOnAzure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4" upgradeDomainCount="2">
+<ServiceDefinition name="MicrosoftDXGermany.hybrisOnAzure" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceDefinition" schemaVersion="2014-06.2.4" upgradeDomainCount="2">
   <WebRole name="MicrosoftDXGermany.hybrisOnAzure.ArrRole" vmsize="Medium">
     <Runtime executionContext="elevated" />
     <Sites>

@@ -1008,7 +1008,7 @@
       <str name="enable"><#%HybrisOnAzure.IndexMaster%#></str>
     </lst>
    <lst name="slave">
-	 <str name="masterUrl">http://<#%RoleEnvironment.Roles["tangible.HybrisOnAzure.BackOfficeWorkerRole"].Instances[0].InstanceEndpoints["Solr"].IPEndpoint.Address%#>:8983/solr</str>
+	 <str name="masterUrl">http://<#%RoleEnvironment.Roles["MicrosoftDXGermany.HybrisOnAzure.BackOfficeWorkerRole"].Instances[0].InstanceEndpoints["Solr"].IPEndpoint.Address%#>:8983/solr</str>
 	 <str name="pollInterval">00:00:60</str>
 	 <str name="enable"><#%HybrisOnAzure.IndexSlave%#></str>
    </lst>
