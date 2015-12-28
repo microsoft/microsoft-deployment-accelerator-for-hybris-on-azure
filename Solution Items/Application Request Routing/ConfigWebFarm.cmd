@@ -34,3 +34,7 @@ rem Disable Disk Cache
 rem Set no buffer for constant data flow
 %systemroot%\system32\inetsrv\appcmd.exe set config -section:webFarms /[name='<#%tangible.Azure.ARR.WebFarmName%#>'].applicationRequestRouting.protocol.minResponseBuffer:"0" /commit:apphost
 %systemroot%\system32\inetsrv\appcmd.exe set config -section:webFarms /[name='<#%tangible.Azure.ARR.WebFarmName%#>'].applicationRequestRouting.protocol.responseBufferLimit:"0" /commit:apphost
+
+rem enable ssl offloading headers for hybris
+%systemroot%\system32\inetsrv\appcmd.exe set config  -section:system.webServer/rewrite/allowedServerVariables /+"[name='HTTP_X_Forwarded_Proto']" /commit:apphost
+%systemroot%\system32\inetsrv\appcmd.exe set config  -section:system.webServer/rewrite/allowedServerVariables /+"[name='HTTP_X_Forwarded_By']" /commit:apphost
