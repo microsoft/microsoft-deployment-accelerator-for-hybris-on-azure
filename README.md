@@ -1,4 +1,7 @@
 # microsoft-deployment-accelerator-for-hybris-on-azure
+
+The content of this project have been deprecated. Do not use for new deployments. August, 2017
+
 This is the open source release of a Microsoft Azure PAAS project to accelerate the deployment of the hybris e-commerce software suite on Azure.
 
 To start, please read the [the overview document](Overview%20-%20Architecture%20-%20Azure%20Assets.pdf) which explains how this package helps you to run hybris on Azure. 
